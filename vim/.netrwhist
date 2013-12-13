@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/etc/httpd/conf.d'
+let g:netrw_dirhist_2='/etc/nginx/conf.d'
+let g:netrw_dirhist_3='/www/Kai/app/controllers/index'
+let g:netrw_dirhist_4='/Users/baz/webdev/dev/date'
+let g:netrw_dirhist_5='/Users/baz/webdev/dev/todo/.git'
+let g:netrw_dirhist_6='/Users/baz/Library/Application Support/Colloquy/Styles/Variants/cc.javelin.colloquy.style.bland'
