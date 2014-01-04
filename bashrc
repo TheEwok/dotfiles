@@ -8,6 +8,13 @@ set -o vi
 alias home='ssh home.dogandbonestudios.com'
 alias pdev='cd ~/webdev/dev'
 alias ll='ls -lGh $@'
+
+platform='unknown'
+unamestr=`uname`
+if [[ "$unamestr" == 'Darwin' ]]; then
+       platform='osx'
+fi
+
 itunes() {
     state=`osascript -e 'tell application "iTunes" to player state as string'`;
     if [ $state = "playing" ]; then
@@ -56,5 +63,8 @@ print_branch_name() {
     fi
 }
 #PS1="\h \[\033[32m\][\w]\[\033[0m\]\n\[\033[1;36m\]\u\[\033[1;33m\]-> \[\033[0m\]"  
-PS1="\[\033[0;33m\][\h]\[\033[32m\][\w]\[\033[0m\]\[\033[\[\033[0;33m\]\[\033[0;\$(branch_color)m\]\$(print_branch_name)\$(itunes)\n\[\033[1;36m\]\u\[\033[1;33m\]-> \[\033[0m\]"
-#PS1="\[\033[0;33m\][\h]\[\033[32m\][\w]\[\033[0m\]\[\033[\[\033[0;33m\]\[\033[0;\$(branch_color)m\]\$(print_branch_name)\n\[\033[1;36m\]\u\[\033[1;33m\]-> \[\033[0m\]"
+if [[ $platform == 'osx' ]]; then
+    PS1="\[\033[0;33m\][\h]\[\033[32m\][\w]\[\033[0m\]\[\033[\[\033[0;33m\]\[\033[0;\$(branch_color)m\]\$(print_branch_name)\$(itunes)\n\[\033[1;36m\]\u\[\033[1;33m\]-> \[\033[0m\]"
+else
+    PS1="\[\033[0;33m\][\h]\[\033[32m\][\w]\[\033[0m\]\[\033[\[\033[0;33m\]\[\033[0;\$(branch_color)m\]\$(print_branch_name)\n\[\033[1;36m\]\u\[\033[1;33m\]-> \[\033[0m\]"
+fi
