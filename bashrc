@@ -26,7 +26,7 @@ itunes() {
 branch_color()  {
     if [ -d .git ]; then
         modifier=`git status | grep clean | wc -l | tr -d ' '`
-        color=`expr 31 - $modifier`
+        color=`expr 31 + $modifier`
         echo $color
     fi
 }
