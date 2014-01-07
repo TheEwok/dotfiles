@@ -24,12 +24,14 @@ itunes() {
     fi
 }
 branch_color()  {
-    if [ -d .git ]; then
+    git rev-parse 2>/dev/null;
+    if [ $? -eq 0 ]; then
         modifier=`git status | grep clean | wc -l | tr -d ' '`
         color=`expr 31 + $modifier`
         echo $color
     fi
 }
+
 print_branch_name() {                                                                                                                                                                                                                                                                                                         
     if [ -z "$1" ]
     then
