@@ -1,5 +1,6 @@
 syntax enable
 filetype off
+execute pathogen#infect()
 call pathogen#runtime_append_all_bundles()
 filetype plugin indent on
 
