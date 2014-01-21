@@ -61,4 +61,5 @@ autocmd vimenter * if !argc() | NERDTree | endif
 set pastetoggle=<f2>
 set backupdir=~/tmp
 set background=dark
+set number
 colo solarized
