@@ -62,4 +62,5 @@ set pastetoggle=<f2>
 set backupdir=~/tmp
 set background=dark
 set number
+nnoremap <F3> :set nonumber!<CR>
 colo solarized
