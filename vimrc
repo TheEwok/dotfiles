@@ -1,5 +1,6 @@
 syntax enable
 filetype off
+execute pathogen#infect()
 call pathogen#runtime_append_all_bundles()
 filetype plugin indent on
 
@@ -60,6 +61,8 @@ autocmd vimenter * if !argc() | NERDTree | endif
 set pastetoggle=<f2>
 set backupdir=~/tmp
 set background=dark
+set number
+nnoremap <F3> :set nonumber!<CR>
 colo solarized
 let g:solarized_bold=0
 let g:solarized_underline=0

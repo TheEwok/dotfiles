@@ -8,6 +8,13 @@ set -o vi
 alias home='ssh home.dogandbonestudios.com'
 alias pdev='cd ~/webdev/dev'
 alias ll='ls -lGh $@'
+alias glog='git log --graph --color'
+platform='unknown'
+unamestr=`uname`
+if [[ "$unamestr" == 'Darwin' ]]; then
+       platform='osx'
+fi
+
 itunes() {
     state=`osascript -e 'tell application "iTunes" to player state as string'`;
     if [ $state = "playing" ]; then
@@ -16,14 +23,21 @@ itunes() {
         echo "[$artist:  $track]";
     fi
 }
+
+NYC_time() {
+    echo `env TZ="America/New_York" date "+%H:%M"`
+}
+
 branch_color()  {
-    if [ -d .git ]; then
+    git rev-parse 2>/dev/null;
+    if [ $? -eq 0 ]; then
         modifier=`git status | grep clean | wc -l | tr -d ' '`
-        color=`expr 31 - $modifier`
+        color=`expr 31 + $modifier`
         echo $color
     fi
 }
-print_branch_name() {                                                                                                                                                                                                                                                                                                         
+
+print_branch_name() {
     if [ -z "$1" ]
     then
         curdir=`pwd`
@@ -56,5 +70,4 @@ print_branch_name() {
     fi
 }
 #PS1="\h \[\033[32m\][\w]\[\033[0m\]\n\[\033[1;36m\]\u\[\033[1;33m\]-> \[\033[0m\]"  
-#PS1="\[\033[0;33m\][\h]\[\033[32m\][\w]\[\033[0m\]\[\033[\[\033[0;33m\]\[\033[0;\$(branch_color)m\]\$(print_branch_name)\$(itunes)\n\[\033[1;36m\]\u\[\033[1;33m\]-> \[\033[0m\]"
-PS1="\[\033[0;33m\][\h]\[\033[32m\][\w]\[\033[0m\]\[\033[\[\033[0;33m\]\[\033[0;\$(branch_color)m\]\$(print_branch_name)\n\[\033[1;36m\]\u\[\033[1;33m\]-> \[\033[0m\]"
+PS1="\[\033[0;33m\][\h]\[\033[0;32m\][\w]\[\033[0m\]\[\033[\[\033[0;33m\]\[\033[0;\$(branch_color)m\]\$(print_branch_name)\[\033[0;37m\][NYC - \$(NYC_time)]\n\[\033[1;36m\]\u\[\033[1;33m\]-> \[\033[0m\]"
