@@ -61,3 +61,6 @@ set pastetoggle=<f2>
 set backupdir=~/tmp
 set background=dark
 colo solarized
+let g:solarized_bold=0
+let g:solarized_underline=0
+let g:solarized_italic=0
