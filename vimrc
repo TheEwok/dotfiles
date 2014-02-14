@@ -59,7 +59,10 @@ nnoremap <C-l> <C-w>l
 
 autocmd vimenter * if !argc() | NERDTree | endif
 set pastetoggle=<f2>
-set backupdir=~/tmp
+if exists('+backupdir')
+   set backupdir=~/.vim/backupdir
+   set directory=~/.vim/backupdir
+endif
 set background=dark
 set number
 nnoremap <F3> :set nonumber!<CR>
@@ -67,3 +70,4 @@ colo solarized
 let g:solarized_bold=0
 let g:solarized_underline=0
 let g:solarized_italic=0
+inoremap <tab> <c-r>=Smart_TabComplete()<CR>
