@@ -57,10 +57,32 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+
 autocmd vimenter * if !argc() | NERDTree | endif
 set pastetoggle=<f2>
+set swapfile
+set dir=~/tmp
 set backupdir=~/tmp
 set background=dark
 set number
+nmap <silent> <C-D> :NERDTreeToggle<CR>
 nnoremap <F3> :set nonumber!<CR>
 colo solarized
+
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '!'
+let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_javascript_jshint_conf="~/.jshintrc"
+
+let g:mocha_js_command = "!mocha --recursive --no-colors {spec}"
+
+let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
+set guifont=Source\ Code\ Pro\ for\ Powerline:h12

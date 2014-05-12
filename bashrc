@@ -1,5 +1,5 @@
 alias zaphod='ssh barry.omahony@zaphod.dhcp.beatportcorp.net'
-export PATH=$PATH:/usr/local/share/npm/bin/
+export PATH=/usr/local/git/bin:$PATH:/usr/local/share/npm/bin/
 export PATH=$PATH:/Users/baz/phalcon-tools
 export PTOOLSPATH=/Users/baz/phalcon-tools
 export LC_ALL=en_US.UTF-8  
@@ -9,11 +9,32 @@ alias home='ssh home.dogandbonestudios.com'
 alias pdev='cd ~/webdev/dev'
 alias ll='ls -lGh $@'
 alias glog='git log --graph --color'
+alias sstk="curl -s 'http://download.finance.yahoo.com/d/quotes.csv?s=sstk&f=l1'"
+alias npmi="npm install"
+alias dev="cd ~/dev"
+alias api="cd ~/dev/shutterstock-audio-api"
+alias webapp="cd ~/dev/shutterstock-audio"
+
 platform='unknown'
 unamestr=`uname`
 if [[ "$unamestr" == 'Darwin' ]]; then
        platform='osx'
 fi
+nin() {
+    npm install --save $*
+}
+
+ning() {
+    npm install -g $*
+}
+
+nind() {
+    npm install --save-dev $*
+}
+
+alias nin=nin
+alias ning=ning
+alias nind=nind
 
 itunes() {
     state=`osascript -e 'tell application "iTunes" to player state as string'`;
@@ -69,6 +90,9 @@ print_branch_name() {
         print_branch_name `dirname "$curdir"`
     fi
 }
+if [ -f $(/usr/local/bin/brew --prefix)/share/bash-completion/bash_completion ]; then
+    . $(/usr/local/bin/brew --prefix)/share/bash-completion/bash_completion
+fi
 #PS1="\h \[\033[32m\][\w]\[\033[0m\]\n\[\033[1;36m\]\u\[\033[1;33m\]-> \[\033[0m\]"  
 #PS1="\[\033[0;33m\][\h]\[\033[32m\][\w]\[\033[0m\]\[\033[\[\033[0;33m\]\[\033[0;\$(branch_color)m\]\$(print_branch_name)\[\033[0;33m\]\$(itunes)\n\[\033[1;36m\]\u\[\033[1;33m\]-> \[\033[0m\]"
 
