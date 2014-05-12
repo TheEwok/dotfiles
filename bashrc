@@ -94,6 +94,4 @@ if [ -f $(/usr/local/bin/brew --prefix)/share/bash-completion/bash_completion ];
     . $(/usr/local/bin/brew --prefix)/share/bash-completion/bash_completion
 fi
 #PS1="\h \[\033[32m\][\w]\[\033[0m\]\n\[\033[1;36m\]\u\[\033[1;33m\]-> \[\033[0m\]"  
-#PS1="\[\033[0;33m\][\h]\[\033[32m\][\w]\[\033[0m\]\[\033[\[\033[0;33m\]\[\033[0;\$(branch_color)m\]\$(print_branch_name)\[\033[0;33m\]\$(itunes)\n\[\033[1;36m\]\u\[\033[1;33m\]-> \[\033[0m\]"
-
 PS1="\[\033[0;33m\][\h]\[\033[0;32m\][\w]\[\033[0m\]\[\033[\[\033[0;33m\]\[\033[0;\$(branch_color)m\]\$(print_branch_name)\[\033[0;37m\][NYC - \$(NYC_time)]\n\[\033[1;36m\]\u\[\033[1;33m\]-> \[\033[0m\]"

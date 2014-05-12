@@ -64,9 +64,11 @@ map <Leader>a :call RunAllSpecs()<CR>
 
 autocmd vimenter * if !argc() | NERDTree | endif
 set pastetoggle=<f2>
-set swapfile
-set dir=~/tmp
 set backupdir=~/tmp
+if exists('+backupdir')
+   set backupdir=~/.vim/backupdir
+   set directory=~/.vim/backupdir
+endif
 set background=dark
 set number
 nmap <silent> <C-D> :NERDTreeToggle<CR>
@@ -86,3 +88,7 @@ if !exists('g:airline_symbols')
 endif
 let g:airline_symbols.space = "\ua0"
 set guifont=Source\ Code\ Pro\ for\ Powerline:h12
+let g:solarized_bold=0
+let g:solarized_underline=0
+let g:solarized_italic=0
+inoremap <tab> <c-r>=Smart_TabComplete()<CR>
