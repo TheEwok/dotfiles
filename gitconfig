@@ -1,0 +1,18 @@
+[core]
+	excludesfile = ~/.gitignore
+[user]
+	name = Baz O'Mahony
+	email = bomahony@shutterstock.com
+[color]
+	ui = true
+[alias]
+    st = status
+    co = checkout
+    ci = commit -v
+    di = diff
+    ap = add -p
+    dc = diff --cached
+    glog = log --graph --oneline --decorate --all
+    vlog = log --date=short --graph --pretty='%C(auto) %h %d%Cblue %ad%Cred %aN %Creset%s'
+[push]
+	default = simple
