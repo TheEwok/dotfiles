@@ -64,7 +64,10 @@ map <Leader>a :call RunAllSpecs()<CR>
 
 autocmd vimenter * if !argc() | NERDTree | endif
 set pastetoggle=<f2>
-set backupdir=~/tmp
+if exists('+undodir')
+    set undodir=~/.vim/undodir
+    set undofile
+endif
 if exists('+backupdir')
    set backupdir=~/.vim/backupdir
    set directory=~/.vim/backupdir
@@ -91,5 +94,5 @@ set guifont=Source\ Code\ Pro\ for\ Powerline:h12
 let g:solarized_bold=0
 let g:solarized_underline=0
 let g:solarized_italic=0
+nnoremap <F5> :UndotreeToggle<cr>
 inoremap <tab> <c-r>=Smart_TabComplete()<CR>
-source ~/dotfiles/git-completion.bash
