@@ -1,6 +1,7 @@
 {
 "-W030": true, // allow standalone expressions w/out assignment/function call (for chai tests)
     "globals": {
+        "node" : true,
         "globalstrict": true,
         "global": true,
         "Buffer": true,

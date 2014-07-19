@@ -1,5 +1,6 @@
 syntax enable
 filetype off
+filetype plugin on
 execute pathogen#infect()
 call pathogen#runtime_append_all_bundles()
 filetype plugin indent on
@@ -80,6 +81,9 @@ colo solarized
 
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '!'
+let g:syntastic_mode_map={ 'mode': 'active',
+                     \ 'active_filetypes': [],
+                     \ 'passive_filetypes': ['html'] }
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_javascript_jshint_conf="~/.jshintrc"
 
@@ -96,3 +100,20 @@ let g:solarized_underline=0
 let g:solarized_italic=0
 nnoremap <F5> :UndotreeToggle<cr>
 inoremap <tab> <c-r>=Smart_TabComplete()<CR>
+
+command! Prose inoremap <buffer> . .<C-G>u|
+            \ inoremap <buffer> ! !<C-G>u|
+            \ inoremap <buffer> ? ?<C-G>u|
+            \ setlocal spell spelllang=sv,en
+            \     nolist nowrap tw=74 fo=t1 nonu|
+            \ augroup PROSE|
+            \   autocmd InsertEnter <buffer> set fo+=a|
+            \   autocmd InsertLeave <buffer> set fo-=a|
+            \ augroup END
+
+command! Code silent! iunmap <buffer> .|
+            \ silent! iunmap <buffer> !|
+            \ silent! iunmap <buffer> ?|
+            \ setlocal nospell list nowrap
+            \     tw=74 fo=cqr1 showbreak=… nu|
+            \ silent! autocmd! PROSE * <buffer>

@@ -1,7 +1,5 @@
 alias zaphod='ssh barry.omahony@zaphod.dhcp.beatportcorp.net'
-export PATH=/usr/local/git/bin:$PATH:/usr/local/share/npm/bin/
-export PATH=$PATH:/Users/baz/phalcon-tools
-export PTOOLSPATH=/Users/baz/phalcon-tools
+export PATH=/usr/local/git/bin:$PATH:/usr/local/share/npm/bin/:/Users/Bomahony/dev/scratch/phonegap/android-sdk/platform-tools:/Users/Bomahony/dev/scratch/phonegap/android-sdk/tools
 export LC_ALL=en_US.UTF-8  
 export LANG=en_US.UTF-8
 set -o vi
@@ -14,7 +12,7 @@ alias npmi="npm install"
 alias dev="cd ~/dev"
 alias api="cd ~/dev/shutterstock-audio-api"
 alias webapp="cd ~/dev/shutterstock-audio"
-
+alias stash="git stash -a && git stash show -p > /tmp/stash.$(date -Iminutes).diff"
 platform='unknown'
 unamestr=`uname`
 if [[ "$unamestr" == 'Darwin' ]]; then
