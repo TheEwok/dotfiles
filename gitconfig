@@ -15,4 +15,4 @@
     glog = log --graph --oneline --decorate --all
     vlog = log --date=short --graph --pretty='%C(auto) %h %d%Cblue %ad%Cred %aN %Creset%s'
 [push]
-	default = simple
+	default = matching

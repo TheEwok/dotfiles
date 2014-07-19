@@ -46,6 +46,12 @@ alias nin=nin
 alias ning=ning
 alias nind=nind
 
+#Stupid Rock
+rock_run() {
+    rock --runtime=node010 run "${@}"
+}
+
+alias rr=rock_run
 #Coz maff iz hurd
 NYC_time() {
     echo `env TZ="America/New_York" date "+%H:%M"`
