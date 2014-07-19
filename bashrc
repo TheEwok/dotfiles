@@ -6,7 +6,9 @@ export LANG=en_US.UTF-8
 
 set -o vi
 
-alias home='ssh home.dogandbonestudios.com'
+#Git aliases
+alias clean_sub='git submodule foreach --recursive git checkout .'
+
 alias ll='ls -lGh $@'
 
 alias glog='git log --graph --color'
