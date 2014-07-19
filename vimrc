@@ -99,7 +99,6 @@ let g:solarized_bold=0
 let g:solarized_underline=0
 let g:solarized_italic=0
 nnoremap <F5> :UndotreeToggle<cr>
-inoremap <tab> <c-r>=Smart_TabComplete()<CR>
 
 command! Prose inoremap <buffer> . .<C-G>u|
             \ inoremap <buffer> ! !<C-G>u|
