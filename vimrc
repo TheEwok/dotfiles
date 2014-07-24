@@ -94,7 +94,12 @@ if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
 let g:airline_symbols.space = "\ua0"
+
 set guifont=Source\ Code\ Pro\ for\ Powerline:h12
+set guioptions-=L
+set guioptions-=T
+set guioptions-=r
+
 let g:solarized_bold=0
 let g:solarized_underline=0
 let g:solarized_italic=0

@@ -1,6 +1,6 @@
 #BASHY BASHY GOODNESS!
 export PATH=/usr/local/git/bin:$PATH:/usr/local/share/npm/bin/:/Users/Bomahony/dev/scratch/phonegap/android-sdk/platform-tools:/Users/Bomahony/dev/scratch/phonegap/android-sdk/tools:~/dotfiles/bin
-
+export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
 export LC_ALL=en_US.UTF-8  
 export LANG=en_US.UTF-8
 
