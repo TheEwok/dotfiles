@@ -6,6 +6,13 @@ export LANG=en_US.UTF-8
 
 set -o vi
 
+#Are we on OS X?
+platform='unknown'
+unamestr=`uname`
+if [[ "$unamestr" == 'Darwin' ]]; then
+       platform='osx'
+fi
+
 #Git aliases
 alias clean_sub='git submodule foreach --recursive git checkout .'
 
@@ -20,13 +27,7 @@ alias api="cd ~/dev/shutterstock-audio-api"
 alias webapp="cd ~/dev/shutterstock-audio"
 alias home="cd ~/dev/home"
 
-alias stash="git stash -a && git stash show -p > /tmp/stash.$(date -Iminutes).diff"
-
-platform='unknown'
-unamestr=`uname`
-if [[ "$unamestr" == 'Darwin' ]]; then
-       platform='osx'
-fi
+alias stash="git stash -a && git stash show -p > /tmp/stash.$(date -u +"%Y-%m-%dT%H:%M:%SZ").diff"
 
 #Aliases for Node
 nin() {
