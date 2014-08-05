@@ -1,2 +1,4 @@
 powerline-fonts
 *.sw?
+.DS_Store
+undodir/
