@@ -95,11 +95,30 @@ if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
 let g:airline_symbols.space = "\ua0"
+
 set guifont=Source\ Code\ Pro\ for\ Powerline:h12
+set guioptions-=L
+set guioptions-=T
+set guioptions-=r
+
 let g:solarized_bold=0
 let g:solarized_underline=0
 let g:solarized_italic=0
 nnoremap <F5> :UndotreeToggle<cr>
+
+function! Preserve(command)
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    execute a:command
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
+
+nmap <leader>$ :call Preserve("%s/\\s\\+$//e")<CR>
 
 command! Prose inoremap <buffer> . .<C-G>u|
             \ inoremap <buffer> ! !<C-G>u|

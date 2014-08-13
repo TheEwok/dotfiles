@@ -55,3 +55,6 @@
 [submodule "vim/bundle/node-vim-debugger"]
 	path = vim/bundle/node-vim-debugger
 	url = https://github.com/sidorares/node-vim-debugger.git
+[submodule "vim/bundle/vim-plugin-AnsiEsc"]
+	path = vim/bundle/vim-plugin-AnsiEsc
+	url = git@github.com:powerman/vim-plugin-AnsiEsc.git
