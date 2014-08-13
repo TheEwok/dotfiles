@@ -75,6 +75,7 @@ if exists('+backupdir')
 endif
 set background=dark
 set number
+set colorcolumn=80
 nmap <silent> <C-D> :NERDTreeToggle<CR>
 nnoremap <F3> :set nonumber!<CR>
 colo solarized
