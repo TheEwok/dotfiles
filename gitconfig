@@ -1,5 +1,6 @@
 [core]
 	excludesfile = ~/.gitignore
+	editor = vim
 [user]
 	name = Baz O'Mahony
 	email = bomahony@shutterstock.com
