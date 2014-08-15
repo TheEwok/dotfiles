@@ -3,7 +3,7 @@ export PATH=/usr/local/git/bin:$PATH:/usr/local/share/npm/bin/:/Users/Bomahony/d
 export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
 export LC_ALL=en_US.UTF-8  
 export LANG=en_US.UTF-8
-
+export EDITOR=vim
 set -o vi
 
 #Are we on OS X?

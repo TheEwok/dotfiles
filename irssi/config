@@ -10,69 +10,6 @@ servers = (
 );
 
 chatnets = {
-  IRCnet = {
-    type = "IRC";
-    max_kicks = "4";
-    max_msgs = "5";
-    max_whois = "4";
-    max_query_chans = "5";
-  };
-  EFNet = { 
-    type = "IRC";
-    max_kicks = "4";
-    max_msgs = "3";
-    max_whois = "1";
-  };
-  Undernet = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "3";
-    max_whois = "30";
-  };
-  DALnet = {
-    type = "IRC";
-    max_kicks = "4";
-    max_msgs = "3";
-    max_whois = "30";
-  };
-  QuakeNet = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "3";
-    max_whois = "30";
-  };
-  OFTC = {
-    type = "IRC";
-    autosendcmd = "/^msg nickserv identify c1p30h;wait 2000;";
-    max_kicks = "1";
-    max_msgs = "3";
-    max_whois = "30";
-  };
-  GameSurge = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "3";
-    max_whois = "30";
-  };
-  WebChat = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "3";
-    max_whois = "30";
-  };
-  Rizon = { 
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "3";
-    max_whois = "30";
-  };
-  LinkNet = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "3";
-    max_whois = "30";
-  };
-  SILC = { type = "SILC"; };
   freenode = {
     type = "IRC";
     nick = "__TheEwok__";
@@ -81,7 +18,12 @@ chatnets = {
 };
 
 channels = (
-  { name = "##hrwarningbell"; chatnet = "freenode"; autojoin = "yes"; }
+  { name = "##hrwarningbell"; chatnet = "freenode"; autojoin = "yes"; },
+  {
+    name = "#coloradoSprings.js";
+    chatnet = "freenode";
+    autojoin = "yes";
+  }
 );
 
 aliases = {
@@ -268,14 +210,12 @@ settings = {
     crapbuster_levels = "JOINS PARTS QUITS NICKS CLIENTCRAP CRAP MODE TOPICS KICKS";
   };
 };
-hilights = (
-  { text = "yournick"; nick = "no"; word = "yes"; },
-  { text = "TheEwok"; nick = "no"; word = "yes"; }
-);
+hilights = ( { text = "TheEwok"; nick = "no"; word = "yes"; } );
 windows = {
-  1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
-  2 = { name = "info"; sticky = "yes"; parent = "3"; };
-  3 = {
+  1 = { name = "hilight"; sticky = "yes"; };
+  2 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
+  3 = { name = "info"; sticky = "yes"; parent = "3"; };
+  4 = {
     items = (
       {
         type = "CHANNEL";
@@ -286,54 +226,16 @@ windows = {
     );
     sticky = "yes";
   };
-  4 = { };
-  5 = { name = "hilight"; sticky = "yes"; };
-  6 = { name = "node"; sticky = "yes"; parent = "9"; };
-  7 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#node";
-        tag = "freenode";
-      }
-    );
-    sticky = "yes";
-    parent = "9";
-  };
-  8 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#nodejs";
-        tag = "freenode";
-      }
-    );
-    sticky = "yes";
-    parent = "9";
-  };
-  9 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#node.js";
-        tag = "freenode";
-      }
-    );
-    sticky = "yes";
-  };
+  5 = { name = "#node.js"; sticky = "yes"; parent = "9"; };
 };
 mainwindows = {
-  1 = { first_line = "61"; lines = "3"; };
-  3 = { first_line = "6"; lines = "26"; };
-  5 = { first_line = "1"; lines = "5"; };
-  9 = { first_line = "32"; lines = "29"; };
+  1 = { first_line = "1"; lines = "5"; };
+  4 = { first_line = "6"; lines = "26"; };
+  5 = { first_line = "33"; lines = "26"; };
 };
 ignores = (
   {
     level = "JOINS PARTS QUITS NICKS";
-    channels = ( "#node.js", "##hrwarningbell" );
+    channels = ( "#node.js", "##hrwarningbell", "#icoloradoSprings.js" );
   }
 );
