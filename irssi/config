@@ -226,13 +226,9 @@ windows = {
     );
     sticky = "yes";
   };
-  5 = { name = "#node.js"; sticky = "yes"; parent = "9"; };
 };
-mainwindows = {
-  1 = { first_line = "1"; lines = "5"; };
-  4 = { first_line = "6"; lines = "26"; };
-  5 = { first_line = "33"; lines = "26"; };
-};
+sticky = "yes";
+
 ignores = (
   {
     level = "JOINS PARTS QUITS NICKS";
