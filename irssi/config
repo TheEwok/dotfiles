@@ -13,7 +13,7 @@ chatnets = {
   freenode = {
     type = "IRC";
     nick = "__TheEwok__";
-    autosendcmd = "/^msg nickserv identify c1p30h;wait 2000;";
+    autosendcmd = "/^msg nickserv identify crapoola;wait 2000;";
   };
 };
 
