@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-DOTFILESDIR = "${HOME}/.dotfiles"
+DOTFILESDIR="${HOME}/.dotfiles"
 
 pushd $DOTFILESDIR
 shopt -s dotglob
