@@ -1,7 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/Users/Bomahony/floobits/share/bcochran-shutterstock/shutterstock-audio-ingester'
-let g:netrw_dirhist_2='/Users/Bomahony/floobits/share/bcochran-shutterstock/shutterstock-audio-ingester/lib'
-let g:netrw_dirhist_3='/Users/Bomahony/floobits/share/bcochran-shutterstock/shutterstock-audio-ingester/lib/fetcher'
-let g:netrw_dirhist_4='/Users/Bomahony/test'
-let g:netrw_dirhist_5='/Users/baz/dotfiles/vim/bundle/vim-snippets/snippets/javascript'
