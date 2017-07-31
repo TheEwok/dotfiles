@@ -14,8 +14,6 @@ if [[ "$unamestr" == 'Darwin' ]]; then
        platform='osx'
 fi
 
-export PLATFORM=$(platform);
-
 # Include sections for neatness
 dotfiles_path=$HOME/dotfiles
 rc_includes_path=$dotfiles_path/rc_includes
