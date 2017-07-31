@@ -1,0 +1,31 @@
+#BASHY BASHY GOODNESS!
+export PATH=/usr/local/bin:$PATH:/usr/local/share/npm/bin/:
+export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
+export LC_ALL=en_US.UTF-8  
+export LANG=en_US.UTF-8
+export EDITOR=vim
+export LPASS_DISABLE_PINENTRY=1
+set -o vi
+
+#Are we on OS X?
+platform='unknown'
+unamestr=`uname`
+if [[ "$unamestr" == 'Darwin' ]]; then
+       platform='osx'
+fi
+
+export PLATFORM=$(platform);
+
+# Include sections for neatness
+dotfiles_path=$HOME/dotfiles
+rc_includes_path=$dotfiles_path/rc_includes
+bash_rc_includes_path=$rc_includes_path/bash
+
+# import functions
+. $bash_rc_includes_path/functions.sh
+. $bash_rc_includes_path/alias.sh
+. $bash_rc_includes_path/prompt.sh
+
+
+
+
