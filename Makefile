@@ -15,3 +15,11 @@ clean:
 	rm -rf $(HOME)/.vimrc
 	rm -rf $(HOME)/.vmailrc
 
+brew:
+	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+movein: link
+
+movein_osx: link brew
+
+.phony: clean brew movein movein_osx
