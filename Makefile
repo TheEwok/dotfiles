@@ -1,6 +1,6 @@
 DOTFILE_SRC_DIR = $(CURDIR)/dotfiles
 DOTFILES_SRC = $(notdir $(wildcard dotfiles/*))
-LINK_TARGET ?= home_dir
+LINK_TARGET ?= $(HOME)
 
 link: $(foreach f, $(DOTFILES_SRC), link-dot-file-$(f))
 
