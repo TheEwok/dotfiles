@@ -21,6 +21,8 @@ update:
 
 brew:
 	brew install bash bash-completion tmux cask 
+	brew tap caskroom/fonts
+	brew cask install font-source-code-pro
 
 tpm:
 	mkdir -p $(HOME)/.tmux/plugins
