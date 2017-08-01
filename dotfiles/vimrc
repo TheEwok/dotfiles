@@ -4,7 +4,6 @@ filetype plugin on
 
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
-call pathogen#runtime_append_all_bundles()
 
 autocmd vimenter * if !argc() | NERDTree | endif
 filetype plugin indent on
