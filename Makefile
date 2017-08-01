@@ -20,7 +20,7 @@ update:
 	git pull origin master
 
 brew:
-	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	brew install bash bash-completion tmux cask 
 
 tpm:
 	mkdir -p $(HOME)/.tmux/plugins
