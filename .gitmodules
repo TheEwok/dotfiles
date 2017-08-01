@@ -31,6 +31,3 @@
 [submodule "dotfiles/vim/bundle/vim-snipmate"]
 	path = dotfiles/vim/bundle/vim-snipmate
 	url = https://github.com/garbas/vim-snipmate.git
-[submodule "dotfiles/vim/bundle/vim-colors-solarized"]
-	path = dotfiles/vim/bundle/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
