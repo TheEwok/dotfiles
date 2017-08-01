@@ -9,12 +9,17 @@ link-dot-file-%: $(DOTFILE_SRC_DIR)/%
 	@echo "Create Symlink for $(notdir $<)"
 	@ln -s $(DOTFILE_SRC_DIR)/$(notdir $<) $(LINK_TARGET)/.$(notdir $<)
 
+vimdirs:
+	@echo "Adding empty Vim dirs"
+	@mkdir $(LINK_TARGET)/.vim/backupdir
+	@mkdir $(LINK_TARGET)/.vim/undodir
+	
 clean: 
-	rm -rf $(HOME)/.bashrc
-	rm -rf $(HOME)/.gitconfig
-	rm -rf $(HOME)/.tmux.conf
-	rm -rf $(HOME)/.vimrc
-	rm -rf $(HOME)/.vmailrc
+	rm -rf $(LINK_TARGET)/.bashrc
+	rm -rf $(LINK_TARGET)/.gitconfig
+	rm -rf $(LINK_TARGET)/.tmux.conf
+	rm -rf $(LINK_TARGET)/.vimrc
+	rm -rf $(LINK_TARGET)/.vmailrc
 
 update:
 	git pull origin master
@@ -25,8 +30,8 @@ brew:
 	brew cask install font-source-code-pro
 
 tpm:
-	mkdir -p $(HOME)/.tmux/plugins
-	git clone https://github.com/tmux-plugins/tpm.git $(HOME)/.tmux/plugins/tpm
+	mkdir -p $(LINK_TARGET)/.tmux/plugins
+	git clone https://github.com/tmux-plugins/tpm.git $(LINK_TARGET)/.tmux/plugins/tpm
 
 movein: link tpm
 
