@@ -33,8 +33,8 @@ tpm:
 	mkdir -p $(LINK_TARGET)/.tmux/plugins
 	git clone https://github.com/tmux-plugins/tpm.git $(LINK_TARGET)/.tmux/plugins/tpm
 
-movein: link tpm
+movein: link tpm vimdirs
 
 movein_osx: brew movein
 
-.phony: clean brew movein movein_osx update
+.phony: clean brew movein movein_osx update vimdirs
