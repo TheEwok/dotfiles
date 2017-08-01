@@ -1,19 +1,20 @@
 syntax enable
 filetype off
 filetype plugin on
+
+runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 call pathogen#runtime_append_all_bundles()
+
+autocmd vimenter * if !argc() | NERDTree | endif
 filetype plugin indent on
 
 set nocompatible
-
 set modelines=0
-
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
-
 set encoding=utf-8
 set scrolloff=3
 set autoindent
@@ -29,52 +30,39 @@ set ruler
 set backspace=indent,eol,start
 set laststatus=2
 set ttymouse=xterm2
-
-nnoremap / /\v
-vnoremap / /\v
+set wrap
+set textwidth=79
+set formatoptions=qrn1
+set pastetoggle=<f2>
+set background=dark
+set number
+set colorcolumn=80
 set ignorecase
 set smartcase
 set gdefault
 set incsearch
 set showmatch
 set hlsearch
+
 nnoremap <silent> <leader><space> :noh<cr>
 nnoremap  <tab> %
 vnoremap <tab> %
-
-set wrap
-set textwidth=79
-set formatoptions=qrn1
-
+nnoremap / /\v
+vnoremap / /\v
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
-
 nnoremap <leader>w <C-w>v<C-w>l
-
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+"Run Tests
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
-
-autocmd vimenter * if !argc() | NERDTree | endif
-set pastetoggle=<f2>
-if exists('+undodir')
-    set undodir=~/.vim/undodir
-    set undofile
-endif
-if exists('+backupdir')
-   set backupdir=~/.vim/backupdir
-   set directory=~/.vim/backupdir
-endif
-set background=dark
-set number
-set colorcolumn=80
 nmap <silent> <C-D> :NERDTreeToggle %<CR>
 nnoremap <F3> :set nonumber!<CR>
 
@@ -83,6 +71,16 @@ nnoremap <silent> <leader>[ :lprevious<cr>
 nnoremap <silent> <leader>] :lnext<cr>
 nnoremap <silent> <leader>p :lclose<cr>
 nnoremap <silent> <leader>o :Errors<cr>
+
+if exists('+undodir')
+    set undodir=~/.vim/undodir
+    set undofile
+endif
+if exists('+backupdir')
+   set backupdir=~/.vim/backupdir
+   set directory=~/.vim/backupdir
+endif
+
 let g:syntastic_error_symbol = '❌'
 let g:syntastic_style_error_symbol = '⁉️'
 let g:syntastic_warning_symbol = '⚠️'
