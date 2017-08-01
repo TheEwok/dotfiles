@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 export PATH=/usr/local/bin:$PATH
+cat <<- EOF >> $HOME/.bash_profile
+if [ -f ~/.bashrc ]; then
+   source ~/.bashrc
+fi
+EOF
 
 # Install Brew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
