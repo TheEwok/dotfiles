@@ -1,3 +1,33 @@
 [submodule "dotfiles/vim/bundle/vim-pathogen"]
 	path = dotfiles/vim/bundle/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen.git
+[submodule "dotfiles/vim/bundle/nerdtree"]
+	path = dotfiles/vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "dotfiles/vim/bundle/vim-airline"]
+	path = dotfiles/vim/bundle/vim-airline
+	url = https://github.com/vim-airline/vim-airline
+[submodule "dotfiles/vim/bundle/syntastic"]
+	path = dotfiles/vim/bundle/syntastic
+	url = https://github.com/vim-syntastic/syntastic.git
+[submodule "dotfiles/vim/bundle/vim-bufonly"]
+	path = dotfiles/vim/bundle/vim-bufonly
+	url = https://github.com/schickling/vim-bufonly.git
+[submodule "dotfiles/vim/bundle/vim-fugitive"]
+	path = dotfiles/vim/bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "dotfiles/vim/bundle/undotree"]
+	path = dotfiles/vim/bundle/undotree
+	url = https://github.com/mbbill/undotree.git
+[submodule "dotfiles/vim/bundle/vim-spec"]
+	path = dotfiles/vim/bundle/vim-spec
+	url = https://github.com/geekjuice/vim-spec.git
+[submodule "dotfiles/vim/bundle/tlib_vim"]
+	path = dotfiles/vim/bundle/tlib_vim
+	url = https://github.com/tomtom/tlib_vim.git
+[submodule "dotfiles/vim/bundle/vim-addon-mw-utils"]
+	path = dotfiles/vim/bundle/vim-addon-mw-utils
+	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule "dotfiles/vim/bundle/vim-snipmate"]
+	path = dotfiles/vim/bundle/vim-snipmate
+	url = https://github.com/garbas/vim-snipmate.git
