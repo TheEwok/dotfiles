@@ -1,4 +1,4 @@
 # Remote run
 ```
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/TheEwok/dotfiles/master/bin/movein.sh)"
+bash -c "$(curl -fsSL http://www.ewok.me/movin"
 ```
