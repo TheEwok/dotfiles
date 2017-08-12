@@ -23,7 +23,4 @@ bash_rc_includes_path=$rc_includes_path/bash
 . $bash_rc_includes_path/functions.sh
 . $bash_rc_includes_path/alias.sh
 . $bash_rc_includes_path/prompt.sh
-
-
-
-
+. $bash_rc_includes_path/tns_funcs.sh

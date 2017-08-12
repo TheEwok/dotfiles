@@ -93,23 +93,26 @@ highlight link SyntasticStyleWarningSign SignColumn
 
 let g:mocha_js_command = "!mocha --recursive --no-colors {spec}"
 
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 2
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
 let g:airline_symbols.space = "\ua0"
 
-set guifont=Source\ Code\ Pro\ for\ Powerline:h12
+set guifont=Source\ Code\ Pro:h10
 set guioptions-=L
 set guioptions-=T
 set guioptions-=r
+hi CursorLine   cterm=NONE ctermbg=darkgray ctermfg=white guibg=darkgray guifg=white
+hi CursorColumn   cterm=NONE ctermbg=darkgray ctermfg=white guibg=darkgray guifg=white
+nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 
 "Solarized
 let g:solarized_termcolors=256
 let g:solarized_bold=0
 let g:solarized_underline=0
 let g:solarized_italic=0
-let g:solarized_termtrans = 1
+let g:solarized_termtrans = 2
 colo solarized
 
 nnoremap <F5> :UndotreeToggle<cr>
