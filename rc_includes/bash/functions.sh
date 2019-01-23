@@ -80,3 +80,24 @@ print_branch_name() {
         print_branch_name `dirname "$curdir"`
     fi
 }
+
+node_gitignore() {
+  wget --quiet --output-document .gitignore "https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore"
+}
+
+xdig() {
+  cd /home/baz/dev/xmrig/build
+  sudo ./xmrig -c config.json
+}
+
+term() {
+  terminator & disown
+}
+
+tnmail() {
+  VMAIL_HOME=/home/baz/.vmail/work vmail
+}
+
+gmail() {
+  vmail
+}

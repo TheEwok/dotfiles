@@ -22,7 +22,7 @@ set showcmd
 set hidden
 set wildmenu
 set wildmode=list:longest
-set visualbell
+set visualbell t_vb=
 set cursorline
 set ttyfast
 set ruler
@@ -80,12 +80,17 @@ if exists('+backupdir')
    set directory=~/.vim/backupdir
 endif
 
+function! StrTrim(txt)
+  return substitute(a:txt, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
+endfunction
+
 let g:syntastic_error_symbol = '❌'
 let g:syntastic_style_error_symbol = '⁉️'
 let g:syntastic_warning_symbol = '⚠️'
 let g:syntastic_style_warning_symbol = '💩'
 let g:syntastic_mode_map={ 'mode': 'active','active_filetypes': [],'passive_filetypes': ['html'] }
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exec = StrTrim(system('npm-which eslint'))
 highlight link SyntasticErrorSign SignColumn
 highlight link SyntasticWarningSign SignColumn
 highlight link SyntasticStyleErrorSign SignColumn
@@ -99,7 +104,7 @@ if !exists('g:airline_symbols')
 endif
 let g:airline_symbols.space = "\ua0"
 
-set guifont=Source\ Code\ Pro:h10
+set guifont=Hack:h8
 set guioptions-=L
 set guioptions-=T
 set guioptions-=r

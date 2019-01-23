@@ -5,6 +5,7 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export EDITOR=vim
 export LPASS_DISABLE_PINENTRY=1
+export VMAIL_BROWSER=/home/baz/chrome.exe
 set -o vi
 
 #Are we on OS X?
@@ -24,3 +25,5 @@ bash_rc_includes_path=$rc_includes_path/bash
 . $bash_rc_includes_path/alias.sh
 . $bash_rc_includes_path/prompt.sh
 . $bash_rc_includes_path/tns_funcs.sh
+
+export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
