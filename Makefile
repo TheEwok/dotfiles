@@ -1,3 +1,9 @@
+OS := $(shell uname)
+ifeq $(OS) Darwin
+  .DEFAULT_GOAL := movein_osx
+else
+  .DEFAULT_GOAL := movein
+endif
 DOTFILE_SRC_DIR = $(CURDIR)/dotfiles
 DOTFILES_SRC = $(notdir $(wildcard dotfiles/*))
 LINK_TARGET ?= $(HOME)
@@ -23,6 +29,7 @@ vimdirs:
 	
 update:
 	git pull origin master
+	git submodule update --init --recursive
 
 brew:
 	brew install $(BREW_PACKAGES)
@@ -38,7 +45,7 @@ tpm:
 	mkdir -p $(LINK_TARGET)/.tmux/plugins
 	git clone https://github.com/tmux-plugins/tpm.git $(LINK_TARGET)/.tmux/plugins/tpm
 
-movein: link tpm vimdirs
+movein: link update tpm vimdirs
 
 movein_osx: brew no_desktop movein
 
