@@ -1,9 +1,4 @@
-OS := $(shell uname)
-ifeq $(OS) Darwin
-  .DEFAULT_GOAL := movein_osx
-else
-  .DEFAULT_GOAL := movein
-endif
+.DEFAULT_GOAL := movein
 DOTFILE_SRC_DIR = $(CURDIR)/dotfiles
 DOTFILES_SRC = $(notdir $(wildcard dotfiles/*))
 LINK_TARGET ?= $(HOME)
